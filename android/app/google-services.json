@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "9126126592",
+    "firebase_url": "https://program-833bb.firebaseio.com",
+    "project_id": "program-833bb",
+    "storage_bucket": "program-833bb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:9126126592:android:099dc85aebbb849b",
+        "android_client_info": {
+          "package_name": "com.berea.bereaapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "9126126592-6oeinh2c6nrl8l2titvrfk0u1o613kgi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCzotm3tvydYPF51xPaugttFS7bZfMFLGQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
