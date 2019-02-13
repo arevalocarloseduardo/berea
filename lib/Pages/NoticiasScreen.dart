@@ -11,39 +11,53 @@ class NoticiasScreen extends StatefulWidget {
 }
 final noticiasReference =
     FirebaseDatabase.instance.reference().child('noticias');
+    final utilsReference =
+    FirebaseDatabase.instance.reference().child('util');
+
 
 
 class _NoticiasScreenState extends State<NoticiasScreen> {
   
   List<Noticias> items;
+  List<Noticias> util;
+  String texto;
    StreamSubscription<Event> _onNoteAddedSubscription;
+   
+   StreamSubscription<Event> _onUtilAddedSubscription;
   StreamSubscription<Event> _onNoteChangedSubscription;
  @override
   void initState() {
     super.initState();
+    
 
     items = new List();
+    
+    util = new List();
+    _onUtilAddedSubscription =
+        utilsReference.onChildAdded.listen(_onUtilAdded);
     _onNoteAddedSubscription =
         noticiasReference.onChildAdded.listen(_onNoteAdded);
     _onNoteChangedSubscription =
         noticiasReference.onChildChanged.listen(_onNoteUpdated);
+
     }
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: "Mes de la armonia",
+      title: "meses",
       home:Scaffold(
         appBar: AppBar(
            backgroundColor: Colors.blue[300],
           centerTitle: true,
-          title: Text("Mes de la armonia"),
+          
+          title: Text("$texto"),
         ),
-        floatingActionButton: FloatingActionButton(onPressed: (){Navigator.push(
+        /*floatingActionButton: FloatingActionButton(onPressed: (){Navigator.push(
       context,
       MaterialPageRoute(builder: (context) => AnadirNoticias(Noticias(null,"","","","","",""))),
     );},child: Icon(Icons.call_made),)
 
-       , body: Container(          
+       , */body: Container(          
           color: Colors.white,
           alignment: Alignment.topCenter,
           child: ListView.builder(
@@ -109,8 +123,17 @@ class _NoticiasScreenState extends State<NoticiasScreen> {
     );
   }
 void _onNoteAdded(Event event) {
+  
+       
     setState(() {
       items.add(new Noticias.fromSnapshot(event.snapshot));
+    });
+  }
+  void _onUtilAdded(Event event) {
+    setState(() {
+      
+      util.add(new Noticias.fromSnapshot(event.snapshot));
+      texto=util.first.title; 
     });
   }
 

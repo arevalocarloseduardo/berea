@@ -37,10 +37,13 @@ class _PeticionesScreenState extends State<PeticionesScreen> {
     return MaterialApp(
       title: "Berea",
       home: Scaffold(
-        floatingActionButton: FloatingActionButton(onPressed: (){Navigator.push(
+       /*floatingActionButton: FloatingActionButton(onPressed: (){Navigator.push(
       context,
       MaterialPageRoute(builder: (context) => AnadirPeticiones(Peticiones(null, "", ""))),
-    );},child: Icon(Icons.add),),
+    );
+    },child: Icon(Icons.add),),
+    */
+    
         body: CustomScrollView(
             slivers: <Widget>[
               SliverAppBar(

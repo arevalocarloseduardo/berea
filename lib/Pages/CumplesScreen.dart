@@ -35,10 +35,10 @@ class _CumplesScreenState extends State<CumplesScreen> {
     return MaterialApp(
       title: "Berea",
       home: Scaffold(
-          floatingActionButton: FloatingActionButton(onPressed: (){Navigator.push(
+       /*   floatingActionButton: FloatingActionButton(onPressed: (){Navigator.push(
       context,
       MaterialPageRoute(builder: (context) => AnadirCumples(Peticiones(null, "", ""))),
-    );},child: Icon(Icons.cake),),          
+    );},child: Icon(Icons.cake),),     */     
           body: CustomScrollView(
             slivers: <Widget>[
               SliverAppBar(
